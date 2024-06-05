@@ -9,13 +9,19 @@ header {
 }
 
 .cards-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(100px, auto);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 50%;
+    margin: auto;
+    flex-wrap: wrap;
 }
 
 .card-item {
     display: flex;
     align-items: center;
+    padding: 5px;
     margin: 10px;
+    max-width: 40%;
 }
