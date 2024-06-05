@@ -1,0 +1,15 @@
+.card {
+    border: 1px solid var(--main-color);
+    &-title {
+        font-size: var(--font-big);
+        color: var(--main-color);
+    }
+    &-subtitle {
+        font-size: var(--font-min);
+        color: var(--main-color);
+    }
+    &-dates, &-info {
+        font-size: var(--font-min);
+    }
+ 
+}
