@@ -1,15 +1,33 @@
 .card {
     border: 1px solid var(--main-color);
     &-title {
-        font-size: var(--font-big);
+        padding: 0 8px;
+        font-size: var(--font-min);
+        font-weight: var(--font-weight-max);
         color: var(--main-color);
     }
     &-subtitle {
+        padding: 0 8px 4px 8px;
         font-size: var(--font-min);
         color: var(--main-color);
     }
     &-dates, &-info {
+        padding: 0 8px;
         font-size: var(--font-min);
     }
- 
+
+    &-image {
+        width: 100%;
+        padding-bottom: 4px;
+    } 
+}
+
+.app-button {
+    width: 100%;
+    padding: 8px;
+    border: 0;
+    border-radius: 0;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    font-size: var(--font-min);
 }
