@@ -9,7 +9,7 @@
     --dark-grey-color: #333;
 
     /* Fonts */
-    --font-min: 10px; /* Minimum size */
+    --font-min: 12px; /* Minimum size */
     --font-max: 32px; /* Maximum size */
     --font-big: 24px; /* Big size */
     --font-preferred: 16px; /* Preferred size */
@@ -22,4 +22,5 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(var(--font-min), var(--font-preferred), var(--font-max));
     font-weight: clamp(var(--font-weight-min), var(--font-weight-preferred), var(--font-weight-max));
+    padding-top: 100px ;
 }
