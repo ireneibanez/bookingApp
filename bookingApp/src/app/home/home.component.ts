@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { CardComponent } from '../../shared/components/card/card.component';
+import { Component, OnInit } from '@angular/core';
+import { CardComponent } from './card/card.component';
 import { ApiService } from '../../shared/services/api-service/api.service';
 import { NgFor } from '@angular/common';
 
@@ -9,7 +9,6 @@ import { NgFor } from '@angular/common';
   imports: [CardComponent, NgFor],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
 
