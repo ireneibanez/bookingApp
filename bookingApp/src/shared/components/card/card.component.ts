@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { CardItem } from '../../interfaces/card.interface';
 
 @Component({
   selector: 'app-card',
@@ -6,8 +7,13 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CardComponent {
+export class CardComponent implements OnInit {
+  @Input() card: any = {};
+
+  ngOnInit(): void {
+    console.log('card', this.card);
+  }
 
 }

@@ -1,9 +1,6 @@
 <header>HEADER</header>
 <main>
-    <div class="cards-container">
-        <app-card class="card-item"/>
-        <app-card class="card-item"/>
-        <app-card class="card-item"/>
-        <app-card class="card-item"/>
+    <div class="cards-container" *ngFor="let card of cards; index as i;">
+        <app-card class="card-item" [card]="card"/>
     </div>    
 </main>
