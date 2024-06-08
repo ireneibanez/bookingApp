@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CardComponent } from './card/card.component';
 import { ApiService } from '../../shared/services/api-service/api.service';
 import { NgFor } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   cards: any[] =  [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private route: Router) {}
 
   ngOnInit(): void {
     this.apiService.getEvents().subscribe(
@@ -23,6 +24,11 @@ export class HomeComponent implements OnInit {
       },
       (error) => console.error(error)
     );
+  }
+
+  navigateToCard(card: any) {
+    console.log('card', card);
+    this.route.navigate(['/event', card.id]);
   }
   
   

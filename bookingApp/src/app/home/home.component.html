@@ -1,6 +1,6 @@
 <header>HEADER</header>
 <main>
     <div class="cards-container" *ngFor="let card of cards; index as i;">
-        <app-card class="card-item" [card]="card"/>
+        <app-card class="card-item" [card]="card" (click)="navigateToCard(card)"/>
     </div>    
 </main>

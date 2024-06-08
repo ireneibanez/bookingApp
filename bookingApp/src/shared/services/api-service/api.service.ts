@@ -18,13 +18,19 @@ export class ApiService {
       );
   }
 
+  getEventInfo(id: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
-      // Error del lado del cliente o de la red
       console.error('An error occurred:', error.error.message);
     } else {
-      // El backend devolvió un código de respuesta fallido
-      console.error(`Backend returned code ${error.status}, body was: ${error.error}`);
+      const bodyError = JSON.parse(error.error);
+      console.error(`Backend returned code ${error.status}, body was: ${bodyError}`);
     }
     return throwError('Something bad happened; please try again later.');
   }

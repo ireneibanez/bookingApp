@@ -4,8 +4,8 @@ import { EventSelectionDetailComponent } from './event-selection-detail/event-se
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export const routes: Routes = [
-    {path: 'event', component: EventSelectionDetailComponent},
+    {path: 'event/:id', component: EventSelectionDetailComponent},
     {path: 'home', component: HomeComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full'},
-    {path: '**', component: PageNotFoundComponent}
+    // {path: '**', component: PageNotFoundComponent}
 ];
