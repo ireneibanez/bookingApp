@@ -7,7 +7,7 @@ import { Observable, catchError, throwError } from 'rxjs';
 })
 export class ApiService {
 
-  private apiUrl = '/api'; // Esto se redirigirá al archivo JSON
+  private apiUrl = '/api';
 
   constructor(private http: HttpClient) { }
 

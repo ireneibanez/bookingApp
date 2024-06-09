@@ -1,11 +1,26 @@
 {
-    "/api": {
-      "target": "http://localhost:4200/assets/data/events.json",
-      "secure": false,
-      "changeOrigin": true,
-      "pathRewrite": {
-        "^/api": ""
-      }
+  "/api": {
+    "target": "http://localhost:4200/assets/data/events.json",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  },
+  "/api/68": {
+    "target": "http://localhost:4200/assets/data/event-info-68.json",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api/68": ""
+    }
+  },
+  "/api/184": {
+    "target": "http://localhost:4200/assets/data/event-info-184.json",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api/184": ""
     }
   }
-  
+}

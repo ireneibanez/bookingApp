@@ -7,5 +7,5 @@ export const routes: Routes = [
     {path: 'event/:id', component: EventSelectionDetailComponent},
     {path: 'home', component: HomeComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full'},
-    // {path: '**', component: PageNotFoundComponent}
+    {path: '**', component: PageNotFoundComponent}
 ];
