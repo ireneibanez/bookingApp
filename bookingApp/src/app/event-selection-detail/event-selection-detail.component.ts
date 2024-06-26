@@ -5,6 +5,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ApiService } from '../../shared/services/api-service/api.service';
 import { NgIf } from '@angular/common';
 import { EventItem } from '../../shared/interfaces/event.interface';
+import { Subscription, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-event-selection-detail',
@@ -17,6 +18,7 @@ export class EventSelectionDetailComponent implements OnInit {
 
   eventId = '';
   event: EventItem;
+  private subscription: any;
 
   constructor( private route: ActivatedRoute, private apiService: ApiService) {
     this.event = {
@@ -30,21 +32,18 @@ export class EventSelectionDetailComponent implements OnInit {
     };
    }
 
-  ngOnInit(): void {
-    this.apiService.getEventInfo('184').subscribe(event => {
+   ngOnInit(): void {
+    this.subscription = this.route.params.pipe(
+      switchMap(params => this.apiService.getEventInfo(params['id']))
+    ).subscribe(event => {
       this.event = event;
       console.log('event', event);
     });
-    // this.route.params.subscribe(params => {
-    //   this.eventId = params['id'];
-    //   console.log('params', params);
-    // if (this.eventId !== '') {
-      // this.apiService.getEventInfo('184'
-      // ).subscribe(event => {
-      //   this.event = event
-      //   console.log('event', event);
-      // });
-    // }
-      // });
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }
