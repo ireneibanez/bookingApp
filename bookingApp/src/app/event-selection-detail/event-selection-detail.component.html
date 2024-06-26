@@ -3,8 +3,8 @@
         <a [routerLink]="'/home'">Volver</a>
     </div>
     <div class="details-container-main">
-        <div class="details-session-container">
-            <app-session-item></app-session-item>
+        <div *ngIf="event" class="details-session-container">
+            <app-session-item [event]="event"></app-session-item>
         </div>
         <div class="details-shopping-cart-container">
             <app-shopping-cart></app-shopping-cart>

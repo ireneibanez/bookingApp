@@ -1,1 +1,23 @@
-<p>session-item works!</p>
+<div *ngFor="let session of event?.sessions">
+    <div>
+        <div>
+            Fecha:
+        </div>
+        <div>
+            {{session.date | date: 'dd/MM/yyyy'}}
+        </div>
+    </div>
+    <div>
+        <div>
+            Disponibilidad:
+        </div>
+        <div>
+            {{session.availability}}
+        </div>
+    </div>
+    <div>
+        <button (click)="removeSessionItemOnShoppingCart()">-</button>
+        <div>{{ sessionItemsSelected }}</div>
+        <button (click)="addSessionItemToShoppingCart()">+</button>
+    </div>
+</div>
